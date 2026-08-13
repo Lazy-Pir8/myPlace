@@ -120,6 +120,7 @@ const COLORS = [
 ];
 
 
+
 // ============================================================
 // CANVAS SETUP
 // ============================================================
@@ -2592,6 +2593,8 @@ function buildPalette() {
 }
 
 
+
+
 function selectColor(id) {
 
     currentColor =
@@ -3499,3 +3502,13 @@ if (
 updateHud();
 
 requestRender();
+
+export {
+    getPixel,
+    requestRender,
+    writeCell,
+    getChunk,
+    BOARD_W,
+    BOARD_H,
+    COLORS
+};

@@ -1,79 +1,51 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>My r/place</title>
-
-    <style>
-
-        body {
-            display: flex;
-            gap: 20px;
-            margin: 20px;
-            background: #f2f2f2;
-            font-family: Arial, sans-serif;
-        }
-
-
-        #palette {
-            width: 180px;
-            height: fit-content;
-            padding: 15px;
-
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-
-            background: white;
-            border: 2px solid black;
-            border-radius: 10px;
-        }
-
-
-        #palette div {
-            width: 35px;
-            height: 35px;
-
-            cursor: pointer;
-
-            border: 1px solid black;
-            border-radius: 5px;
-        }
-
-
-        #palette div:hover {
-            transform: scale(1.1);
-        }
-
-
-        #viewport {
-            border: 3px solid black;
-            background: white;
-
-            image-rendering: pixelated;
-        }
-
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Place</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
+<canvas id="viewport"></canvas>
 
-    <div id="palette"></div>
+<div class="readout" role="status" aria-live="off">
+    <div class="readout__cell">
+        <span class="readout__label">Cell</span>
+        <span class="readout__value" id="coords">—</span>
+    </div>
+    <div class="readout__rule" aria-hidden="true"></div>
+    <div class="readout__cell">
+        <span class="readout__label">Zoom</span>
+        <span class="readout__value" id="zoom">1.0×</span>
+    </div>
+</div>
 
+<div class="keys" aria-hidden="true">
+    <span><b>drag</b> paint</span>
+    <span><b>space</b> or <b>right-drag</b> pan</span>
+    <span><b>scroll</b> zoom</span>
+    <span><b>1–9</b> colour</span>
+    <span><b>E</b> erase</span>
+    <span><b>G</b> grid</span>
+    <span><b>R</b> reset</span>
+    <span><b>⌘Z</b> undo</span>
+    
+</div>
 
-    <canvas 
-        id="viewport"
-        width="2500"
-        height="2500">
-    </canvas>
+<div class="export-panel">
+    <button id="exportPng" type="button">PNG</button>
+    <button id="exportData" type="button">Data</button>
+</div>
 
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-    <script src="script.js"></script>
+<div class="dock">
+    <div class="palette" id="palette" role="group" aria-label="Colour palette"></div>
+</div>
 
-
+<script type="module" src="main.js"></script>
+<script type="module" src="../algos/evenColor.js"></script>
 </body>
-
-
 </html>
