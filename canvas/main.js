@@ -2,11 +2,11 @@
 // CONFIG
 // ============================================================
 
-const BOARD_W = 1024;
-const BOARD_H = 1024;
+const BOARD_W = 2048;
+const BOARD_H = 2048;
 
-const MIN_ZOOM = 0.5;
-const MAX_ZOOM = 64;
+const MIN_ZOOM = 0.1;
+const MAX_ZOOM = 256;
 
 const GRID_FADE_IN = 6;
 const GRID_FADE_FULL = 12;
@@ -82,41 +82,125 @@ const UNDO_LIMIT = 200;
 const COLORS = [
     "#ffffff",
 
+    // Reds
+    "#ff0000",
+    "#ff1744",
+    "#ff2d55",
+    "#ff3b30",
+    "#ff453a",
+    "#ff5252",
+    "#ff6b6b",
+    "#e63946",
+    "#d90429",
     "#be0039",
+
+    // Oranges
     "#ff4500",
+    "#ff5722",
+    "#ff6d00",
+    "#ff7518",
+    "#ff7a00",
+    "#ff8500",
+    "#ff8c00",
+    "#ff9800",
+    "#ffa000",
     "#ffa800",
+
+    // Yellows
+    "#ffc107",
+    "#ffca28",
+    "#ffd000",
     "#ffd635",
+    "#ffdc5e",
+    "#ffe066",
+    "#ffe082",
+    "#ffe600",
+    "#fff176",
     "#fff8b8",
 
-    "#00a368",
-    "#00cc78",
+    // Greens
+    "#d4ff00",
+    "#a8e600",
     "#7eed56",
+    "#52d273",
+    "#32cd32",
+    "#00c853",
+    "#00b248",
+    "#00a368",
+    "#00a86b",
+    "#009e60",
+
+    // Teals / Cyans
+    "#00897b",
+    "#00796b",
     "#00756f",
+    "#008f8c",
     "#009eaa",
+    "#00a8a8",
+    "#00bcd4",
+    "#00c4cc",
     "#00ccc0",
+    "#00e5ff",
 
-    "#2450a4",
-    "#3690ea",
+    // Light blues
+    "#18ffff",
     "#51e9f4",
-    "#493ac1",
-    "#6a5cff",
-    "#94b3ff",
+    "#40c4ff",
+    "#29b6f6",
+    "#2196f3",
+    "#3690ea",
+    "#4285f4",
+    "#4dabf7",
+    "#64b5f6",
+    "#80d8ff",
 
+    // Deep blues
+    "#2450a4",
+    "#1565c0",
+    "#1976d2",
+    "#1a4fa3",
+    "#304ffe",
+    "#3f51b5",
+    "#3949ab",
+    "#493ac1",
+    "#5c4dcc",
+    "#6a5cff",
+
+    // Purples
+    "#7c4dff",
+    "#651fff",
+    "#6200ea",
+    "#6a1b9a",
     "#811e9f",
+    "#8e24aa",
+    "#9c27b0",
+    "#ab47bc",
     "#b44ac0",
     "#e4abff",
+
+    // Pinks
+    "#ff00aa",
+    "#ff1493",
+    "#ff0080",
     "#de107f",
     "#ff3881",
+    "#ff4081",
+    "#ff6699",
+    "#ff77aa",
     "#ff99aa",
+    "#ffb3c6",
 
+    // Earth / dark transition
     "#6d482f",
+    "#8b5a2b",
     "#9c6926",
+    "#b07d3c",
     "#ffb470",
-
-    "#000000",
     "#515252",
     "#898d90",
-    "#d4d7d9"
+    "#d4d7d9",
+    "#222222",
+    "#000000"
 ];
 
 
@@ -219,6 +303,20 @@ const imgData =
         BOARD_H
     );
 
+
+const dock = document.querySelector(".dock");
+
+function togglePalette() {
+    dock.classList.toggle("hidden");
+}
+
+window.addEventListener("keydown", event => {
+
+    if (event.key.toLowerCase() === "p") {
+        togglePalette();
+    }
+
+});
 
 // ============================================================
 // RGB CACHE

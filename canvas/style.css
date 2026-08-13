@@ -286,3 +286,12 @@ html, body {
     }
 
 }
+
+
+.dock {
+    transition: transform 0.3s ease;
+}
+
+.dock.hidden {
+    transform: translateY(100%);
+}
