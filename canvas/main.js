@@ -63,7 +63,7 @@ const SAVE_DELAY = 400;
 // 1000 = one second
 // 5000 = five seconds
 
-const PAINT_COOLDOWN = 100;
+const PAINT_COOLDOWN = 1;
 
 let nextPaintTime = 0;
 
@@ -626,6 +626,7 @@ function getPixel(
     ];
 
 }
+
 
 
 // ============================================================
@@ -3608,5 +3609,6 @@ export {
     getChunk,
     BOARD_W,
     BOARD_H,
-    COLORS
+    COLORS,
+    
 };
