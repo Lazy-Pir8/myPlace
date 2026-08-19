@@ -38,4 +38,14 @@ future features such as larger canvases and procedural generation.
 
 ## Pivot
 I'm taking a pivot and making something else out of it, using the canvas I have made.
-Let's see what it will be
+So One way is to use this pixelated canvas to draw things, or test out mathematical algorithms.
+The recent addition is Conway's Game of Life.
+So the Red coloured pixels can be called Alive Cells, while the white ones are Dead Cells.
+
+There are certain rules that the cells follow:
+1. Underpopulation: Any live cell with fewer than two live neighbors dies.
+2. Survival: Any live cell with two or three live neighbors lives on to the next generation.
+3. Overpopulation: Any live cell with more than three live neighbors dies.
+4. Reproduction: Any dead cell with exactly three live neighbors becomes a live cell. 
+
+And So the Simulation Runs with these rules
