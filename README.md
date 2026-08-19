@@ -49,3 +49,6 @@ There are certain rules that the cells follow:
 4. Reproduction: Any dead cell with exactly three live neighbors becomes a live cell. 
 
 And So the Simulation Runs with these rules
+
+# Project status: Paused
+The original idea was to build a collaborative r/Place style canvas. I later experimented with using the canvas as a platform for mathematical and algorithmic simulations, including Conway's Game of Life. I decided to pause the project because I haven't found a direction I genuinely want to explore further. The canvas infrastructure remains available for future experiments.
